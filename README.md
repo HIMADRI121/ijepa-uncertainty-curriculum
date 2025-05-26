@@ -31,22 +31,6 @@ Only one view of the image needs to be processed by the target encoder, and only
 
 
 
-## Code Structure
-
-```
-.
-├── configs                   # directory in which all experiment '.yaml' configs are stored
-├── src                       # the package
-│   ├── train.py              #   the I-JEPA training loop
-│   ├── helper.py             #   helper functions for init of models & opt/loading checkpoint
-│   ├── transforms.py         #   pre-train data transforms
-│   ├── datasets              #   datasets, data loaders, ...
-│   ├── models                #   model definitions
-│   ├── masks                 #   mask collators, masking utilities, ...
-│   └── utils                 #   shared utilities
-├── main_distributed.py       # entrypoint for launch distributed I-JEPA pretraining on SLURM cluster
-└── main.py                   # entrypoint for launch I-JEPA pretraining locally on your machine
-```
 
 **Config files:**
 Note that all experiment parameters are specified in config files (as opposed to command-line-arguments). See the [configs/](configs/) directory for example config files.
@@ -56,14 +40,6 @@ Note that all experiment parameters are specified in config files (as opposed to
 ### Single-GPU training
 
 le, to pre-train on 16 A100 80G GPUs using the pre-training experiment configs specificed inside [configs/in1k_vith14_ep300.yaml](configs/in1k_vith14_ep300.yaml), type the command:
-```
-python main_distributed.py \
-  --fname configs/in1k_vith14_ep300.yaml \
-  --folder $path_to_save_submitit_logs \
-  --partition $slurm_partition \
-  --nodes 2 --tasks-per-node 8 \
-  --time 1000
-```
 
 ---
 ###
