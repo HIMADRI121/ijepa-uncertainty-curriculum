@@ -26,11 +26,6 @@ The model correctly captures positional uncertainty and produces high-level obje
 I-JEPA pretraining is also computationally efficient.
 It does not involve any overhead associated with applying more computationally intensive data augmentations to produce multiple views.
 Only one view of the image needs to be processed by the target encoder, and only the context blocks need to be processed by the context encoder.
-Empirically, I-JEPA learns strong off-the-shelf semantic representations without the use of hand-crafted view augmentations.
-
-![1percenteval](https://github.com/facebookresearch/ijepa/assets/7530871/e6e5291f-ca51-43a4-a6cf-069811094ece)
-![lineareval](https://github.com/facebookresearch/ijepa/assets/7530871/d8cffa73-5350-444e-987a-7e131a86d767)
-
 
 
 
